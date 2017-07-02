@@ -52,22 +52,22 @@ public class Manchot {
 
     public static void main(String[] args) throws Exception { 
     	
-    	List<Manchot> list = new ArrayList<Manchot>();
-    	
-    	Manchot m1 = new Manchot(1,5);
-    	Manchot m2 = new Manchot(1,5);
-    	Manchot m3 = new Manchot(1,5);
-    	Manchot m4 = new Manchot(1,5);
-    	Manchot m5 = new Manchot(1,5);
-
-    	list.add(m1);
-    	list.add(m2);
-    	list.add(m3);
-    	list.add(m4);
-    	list.add(m5);
-    	
     	Algo algo = new Algo();
-    	algo.rechercheAleatoire(10, list);
-    	System.out.println(algo.rechercheUCB(40, list));
+    	Random rand = new Random();
+    	
+    	// équivalent à srand(time(0))
+    	rand.setSeed(System.nanoTime());
+    	
+    	List<Manchot> manchots = new ArrayList<Manchot>();
+    	manchots = algo.creerManchots(15, -10, 10, 0, 10);
+    	
+    	double result1 = algo.rechercheAleatoire(1000, manchots);
+    	double result2 = algo.rechercheGloutonne(1000, manchots);
+    	double result3 = algo.rechercheUCB(1000, manchots);
+    	
+    	System.out.println(result1);
+    	System.out.println(result2);
+    	System.out.println(result3);
+
     }
 }

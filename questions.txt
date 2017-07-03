@@ -18,4 +18,4 @@ Question 2:
 - Quand le nombre d'iterations est moin élevé
 
 Question 3:
--La stratégie de recherche UCB est meilleure avec un plus grand nombre de machines et un nombre d'itérations élevé.
+-La stratégie de recherche UCB est meilleure avec un plus grand nombre de machines et un nombre d'itérations élevé, c'est également la meilleur quand on fait varier K.

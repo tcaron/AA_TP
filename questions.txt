@@ -1,0 +1,21 @@
+Question 1:
+En augmentant la valeur de K, la valeur obtenue par la recherche ucb augmente également alors que la recherche aléatoire et
+la stratégie gloutonne sont plus faibles.
+
+exemple de résultat: pour 15 machines , 15000 itérations et k = racine carrée de 6.
+
+recherche aléatoire : -1631.3143892621215
+recherche gloutonne : 44966.425569069914
+recherche UCB: 128068.56080578177
+
+recherche aléatoire : 33854.89504910447
+recherche gloutonne : 150788.94661033395
+recherche ucb : 119327.4536378832
+
+
+Question 2:
+- La stratégie gloutonne est meilleure dans le cas ou le nombre de machine est le moin élevé.
+- Quand le nombre d'iterations est moin élevé
+
+Question 3:
+-La stratégie de recherche UCB est meilleure avec un plus grand nombre de machines et un nombre d'itérations élevé.

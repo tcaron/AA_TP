@@ -28,21 +28,24 @@ public class Algo {
 		 Double bestScore = 0.0;
 		 Double actual = 0.0;
 		 Manchot bestManchot = new Manchot(0, 0) ;
+		 Double essai = 0.0;
+		 int first_itr = 0;
 		for (int i = 0; i< manchot.size();i++){
 			
 			actual = manchot.get(i).tirerBras();
-			
+			essai += actual;
 			if ( actual > bestScore ){
 				bestScore = actual;
 				bestManchot = manchot.get(i);
 			}
+			first_itr++;
 		}
 		
-		for (int j=0; j< itr; j++){
+		for (int j= first_itr; j< itr; j++){
 			
-			bestScore += bestManchot.tirerBras();
+			essai += bestManchot.tirerBras();
 		}
-		 return bestScore;
+		 return essai;
 	}
 	
 	public Double rechercheUCB (int itr, List<Manchot> manchot){
@@ -54,12 +57,14 @@ public class Algo {
 		Double best_result = 0.0;
 		Double score = 0.0;
 		Double total = 0.0;
+		Double essai = 0.0;
 		int index_manchot = 0;
 		
 		for (int i = 0;i< manchot.size(); i++)
 		{
 			first_itr++;
 			arrayScore[i] = manchot.get(i).tirerBras();
+			essai += manchot.get(i).tirerBras();
 			arrayTirage[i]++;
 		}
 		
@@ -79,12 +84,12 @@ public class Algo {
 			}
 			
 			score = manchot.get(index_manchot).tirerBras();
-			total += score;
+			essai += score;
 			arrayTirage[index_manchot] += score;
 			arrayScore[index_manchot]++ ;
 			
 		}
-		return total;
+		return essai;
 	}
 	
 	public List<Manchot> creerManchots (int nb_manchots , int min_esp, int max_esp, int min_var, int max_var )

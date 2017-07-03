@@ -59,15 +59,15 @@ public class Manchot {
     	rand.setSeed(System.nanoTime());
     	
     	List<Manchot> manchots = new ArrayList<Manchot>();
-    	manchots = algo.creerManchots(15, -10, 10, 0, 10);
+    	manchots = algo.creerManchots(1500, -10, 10, 0, 10);
     	
-    	double result1 = algo.rechercheAleatoire(1000, manchots);
-    	double result2 = algo.rechercheGloutonne(1000, manchots);
-    	double result3 = algo.rechercheUCB(1000, manchots);
+    	double result1 = algo.rechercheAleatoire(150000, manchots);
+    	double result2 = algo.rechercheGloutonne(150000, manchots);
+    	double result3 = algo.rechercheUCB(150000, manchots);
     	
-    	System.out.println(result1);
-    	System.out.println(result2);
-    	System.out.println(result3);
+    	System.out.println("RA : "+result1);
+    	System.out.println("RG : "+result2);
+    	System.out.println("UCB : "+result3);
 
     }
 }
